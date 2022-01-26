@@ -1,14 +1,39 @@
-import React from 'react'
-import { useProductsContext } from '../context/products_context'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import Error from './Error'
-import Loading from './Loading'
-import Product from './Product'
+import React from "react";
+import { useProductsContext } from "../context/products_context";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Error from "./Error";
+import Loading from "./Loading";
+import Product from "./Product";
+
+/*
+to-do:
+- have a loading state to show either loading or feature
+- get products from the context and display 3 - 4 items
+- Error ??
+*/
 
 const FeaturedProducts = () => {
-  return <h4>featured products</h4>
-}
+  if (false) {
+    return (
+      <Wrapper className="section">
+        <Loading />
+      </Wrapper>
+    );
+  }
+  return (
+    <Wrapper className="section">
+      <div className="title">
+        <h1>Featured Products</h1>
+        <div className="underline"></div>
+      </div>
+      <div className="featured section-center"></div>
+      <Link className="btn" to="/products">
+        All Products
+      </Link>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   background: var(--clr-grey-10);
@@ -31,6 +56,6 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
   }
-`
+`;
 
-export default FeaturedProducts
+export default FeaturedProducts;
