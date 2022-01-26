@@ -21,7 +21,7 @@ const Services = () => {
             const { id, icon, title, text } = service;
             return (
               <article className="service" key={id}>
-                <span>{icon}</span>
+                <span className="icon">{icon}</span>
                 <h4 className="title">{title}</h4>
                 <p>{text}</p>
               </article>
