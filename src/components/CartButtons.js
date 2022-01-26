@@ -1,14 +1,34 @@
-import React from 'react'
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { useProductsContext } from '../context/products_context'
-import { useCartContext } from '../context/cart_context'
-import { useUserContext } from '../context/user_context'
+import React from "react";
+import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { useProductsContext } from "../context/products_context";
+import { useCartContext } from "../context/cart_context";
+import { useUserContext } from "../context/user_context";
+
+/*
+to-do:
+- cart value will update dynamically based on items in cart 
+- Login (text and svg should change based on if user is login)
+*/
 
 const CartButtons = () => {
-  return <h4>cart buttons </h4>
-}
+  return (
+    <Wrapper>
+      <Link className="cart-btn">
+        Cart
+        <span className="cart-container">
+          <FaShoppingCart />
+          <span className="cart-value">0</span>
+        </span>
+      </Link>
+      <button className="auth-btn">
+        Login
+        <FaUserPlus />
+      </button>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   display: grid;
@@ -62,5 +82,5 @@ const Wrapper = styled.div`
       margin-left: 5px;
     }
   }
-`
-export default CartButtons
+`;
+export default CartButtons;
