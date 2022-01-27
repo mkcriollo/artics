@@ -1,10 +1,42 @@
-import React from 'react'
-import { useFilterContext } from '../context/filter_context'
-import { BsFillGridFill, BsList } from 'react-icons/bs'
-import styled from 'styled-components'
+import React from "react";
+import { useFilterContext } from "../context/filter_context";
+import { BsFillGridFill, BsList } from "react-icons/bs";
+import styled from "styled-components";
+
+/*
+TO_DO:
+- change classes on list or grid buttons based on selected
+- make product number dynamic based on the amount of product shown
+- have the form call a function where it will return the filter data based on selected filter
+*/
+
 const Sort = () => {
-  return <h4>sort </h4>
-}
+  return (
+    <Wrapper>
+      <div className="btn-container">
+        <button className="active">
+          <BsFillGridFill />
+        </button>
+        <button className="null">
+          <BsList />
+        </button>
+      </div>
+      <p>23 Products Found</p>
+      <hr />
+      <form>
+        <label for="storeFilter">Sort By</label>
+        <select list="filter" className="sort-input" name="storeFilter">
+          <option value="lowest" selected>
+            Price (Lowest)
+          </option>
+          <option value="highest">Price (Highest)</option>
+          <option value="a-z">Name (A-Z)</option>
+          <option value="z-a">Name (Z-A)</option>
+        </select>
+      </form>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   display: grid;
@@ -67,6 +99,6 @@ const Wrapper = styled.section`
     font-size: 1rem;
     text-transform: capitalize;
   }
-`
+`;
 
-export default Sort
+export default Sort;
