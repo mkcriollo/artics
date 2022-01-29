@@ -15,6 +15,13 @@ import {
 
 const initialState = { products: [], loading: false };
 
+/* notes   
+begin => load ?
+success => add items & stop load?
+error => show error msg & make true ?
+
+*/
+
 const ProductsContext = React.createContext();
 
 export const ProductsProvider = ({ children }) => {
